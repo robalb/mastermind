@@ -59,16 +59,6 @@ void printRedWhite(int red, int white);
 
 void debugPrintState(uint8_t state[], int red, int white);
 
-
-/*
- * Homemade test framework
- */
-#define MAX_FAIL 100
-#define MAX_TEST_NAME 30
-void assert_true(char *name, bool test);
-void assert_false(char *name, bool test);
-void print_test_results();
-
 /*
  * Homemade test framework
  */
