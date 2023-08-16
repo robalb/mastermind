@@ -37,13 +37,19 @@
 #define CRESET "\e[0m"
 #define COLOR_RESET "\e[0m"
 
+
+
 struct state {
   bool enabled;
   uint8_t pins[PIN_AMOUNT];
 };
 
-void test();
 
 int factorial(int N);
+
+void redGreen(uint8_t state[], int *red, int *green);
+
+void printState(uint8_t state[]);
+
 
 #endif
