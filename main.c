@@ -21,6 +21,8 @@ int main(){
 
   printf("pool generated\n");
 
+  free(states_pool);
+
   return 0;
 }
 

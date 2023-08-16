@@ -37,11 +37,6 @@
 #define CRESET "\e[0m"
 #define COLOR_RESET "\e[0m"
 
-
-const char* colors[] = {BLK, RED, GRN, YEL, BLU, MAG, CYN, WHT, HBLK, HRED, HGRN, HYEL, HBLU, HMAG, HCYN, HWHT};
-const int numColors = sizeof(colors) / sizeof(colors[0]);
-
-
 struct state {
   bool enabled;
   uint8_t pins[PIN_AMOUNT];
