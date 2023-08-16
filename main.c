@@ -23,7 +23,6 @@ int main(){
 
   //iterate solutions
   
-
   //free and quit
   free(states_pool);
   return 0;

@@ -45,11 +45,28 @@ struct state {
 
 int factorial(int N);
 
-void redGreen(uint8_t state[], int *red, int *green);
-
-void printState(uint8_t state[]);
+/**
+* red: number of correct colors
+* white: number of correct positions
+*/
+void redWhite(uint8_t secret[], uint8_t state[], int *red, int *white);
 
 void generatePool(struct state *pool);
 
+void printState(uint8_t state[]);
+
+void printRedWhite(int red, int white);
+
+void debugPrintState(uint8_t state[], int red, int white);
+
+
+/*
+ * Homemade test framework
+ */
+#define MAX_FAIL 100
+#define MAX_TEST_NAME 30
+void assert_true(char *name, bool test);
+void assert_false(char *name, bool test);
+void print_test_results();
 
 #endif
