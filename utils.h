@@ -9,7 +9,7 @@
 #define PIN_AMOUNT 4
 #define PIN_COLORS 8
 
-#define INITIAL_STATES (factorial(PIN_COLORS) / factorial(PIN_COLORS - PIN_AMOUNT) )
+#define POOL_SIZE (factorial(PIN_COLORS) / factorial(PIN_COLORS - PIN_AMOUNT) )
 
 //dot symbol
 #define DOT "\u25cf"
@@ -38,6 +38,9 @@
 #define COLOR_RESET "\e[0m"
 
 
+const char* colors[] = {BLK, RED, GRN, YEL, BLU, MAG, CYN, WHT, HBLK, HRED, HGRN, HYEL, HBLU, HMAG, HCYN, HWHT};
+const int numColors = sizeof(colors) / sizeof(colors[0]);
+
 
 struct state {
   bool enabled;
@@ -50,6 +53,8 @@ int factorial(int N);
 void redGreen(uint8_t state[], int *red, int *green);
 
 void printState(uint8_t state[]);
+
+void generatePool(struct state *pool);
 
 
 #endif

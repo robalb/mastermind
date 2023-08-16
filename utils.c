@@ -25,3 +25,7 @@ void printState(uint8_t state[]){
   }
   printf(" \n");
 }
+
+void generatePool(struct state *pool){
+
+}
