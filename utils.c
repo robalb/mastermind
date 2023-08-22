@@ -31,7 +31,21 @@ void redWhite(uint8_t secret[], uint8_t state[], int *red, int *white){
 }
 
 void generatePool(struct state *pool){
-
+  for(int first = 0; first < PIN_COLORS; first++) {
+    for(int second = 0; second < PIN_COLORS; second++) {
+      for(int third = 0; third < PIN_COLORS; third++) {
+        for(int fourth = 0; fourth < PIN_COLORS; fourth++) {
+          if(first == second || first == third || first == fourth || 
+          second == third || second == fourth || third == fourth) {
+            continue;
+          } else {
+            // TODO sostituire la stampa con il salvataggio effettivo in memoria
+            printf("%d %d %d %d\n", first, second, third, fourth);
+          }
+        }
+      }
+    }
+  }
 }
 
 void printState(uint8_t state[]){

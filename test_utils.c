@@ -29,8 +29,15 @@ void test_redWhite() {
     assert_true("all colors, no positions", red == 4 && white == 0);
 }
 
+void test_generatePool() {
+    struct state *states_pool = (struct state*)calloc(POOL_SIZE, sizeof(struct state));
+    generatePool(states_pool);
+    free(states_pool);
+}
+
 int main() {
-    test_redWhite();
+    // test_redWhite();
+    test_generatePool();
     print_test_results();
     return 0;
 }

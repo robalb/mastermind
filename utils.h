@@ -51,6 +51,9 @@ int factorial(int N);
 */
 void redWhite(uint8_t secret[], uint8_t state[], int *red, int *white);
 
+/**
+* Generates all the partial permutations of colors in pins
+*/
 void generatePool(struct state *pool);
 
 void printState(uint8_t state[]);
