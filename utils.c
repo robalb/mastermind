@@ -31,6 +31,7 @@ void redWhite(uint8_t secret[], uint8_t state[], int *red, int *white){
 }
 
 void generatePool(struct state *pool){
+  int index = 0;
   for(int first = 0; first < PIN_COLORS; first++) {
     for(int second = 0; second < PIN_COLORS; second++) {
       for(int third = 0; third < PIN_COLORS; third++) {
@@ -39,8 +40,15 @@ void generatePool(struct state *pool){
           second == third || second == fourth || third == fourth) {
             continue;
           } else {
-            // TODO sostituire la stampa con il salvataggio effettivo in memoria
-            printf("%d %d %d %d\n", first, second, third, fourth);
+            // FIXME sicuramente esiste un modo più corretto di farlo ma al momento non lo conosco
+            // Lascio a @robalb l'arduo compito
+            struct state tmp = pool[index];
+            tmp.pins[0] = first;
+            tmp.pins[1] = second;
+            tmp.pins[2] = third;
+            tmp.pins[3] = fourth;
+            pool[index] = tmp;
+            index++;
           }
         }
       }
@@ -55,7 +63,7 @@ void printState(uint8_t state[]){
     //print a dot
     //printf("%s" DOT CRESET, colors[3]);
     //print a debug integer
-    printf(" %s%d" CRESET, colors[i+1], state[i]);
+    printf(" %s%d" CRESET, colors[state[i]], state[i]);
   }
   printf(" \n");
 }
